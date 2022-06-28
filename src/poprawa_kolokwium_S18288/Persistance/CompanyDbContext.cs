@@ -17,6 +17,11 @@ namespace poprawa_kolokwium_S18288.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<File>().HasKey(x => x.FileId);
+            modelBuilder.Entity<Member>().HasKey(x => x.MemberId);
+            modelBuilder.Entity<Organization>().HasKey(x => x.OranizationId);
+            modelBuilder.Entity<Team>().HasKey(x => x.TeamId);
+            
             modelBuilder.Entity<Organization>()
                 .HasMany(p => p.Members)
                 .WithOne(p => p.Organization);
