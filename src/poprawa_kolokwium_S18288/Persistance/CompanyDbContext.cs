@@ -11,6 +11,10 @@ namespace poprawa_kolokwium_S18288.Persistance
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Team> Teams { get; set; }
 
+        public CompanyDbContext(DbContextOptions<CompanyDbContext> options) : base(options)
+        { 
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Organization>()
