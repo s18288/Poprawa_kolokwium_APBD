@@ -57,6 +57,7 @@ namespace poprawa_kolokwium_S18288.Controllers
 
             if(team.Organization.OranizationId != memberOrg.OranizationId)
             {
+                //HTTP 500
                 throw new ArgumentException("Different Organization");
             }
 
@@ -71,6 +72,7 @@ namespace poprawa_kolokwium_S18288.Controllers
 
             await _context.SaveChangesAsync();
 
+            //HTTP 200
             return Ok();
         }
     }
