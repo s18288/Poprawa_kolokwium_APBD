@@ -21,7 +21,8 @@ namespace poprawa_kolokwium_S18288.Persistance
             modelBuilder.Entity<Member>().HasKey(x => x.MemberId);
             modelBuilder.Entity<Organization>().HasKey(x => x.OranizationId);
             modelBuilder.Entity<Team>().HasKey(x => x.TeamId);
-            
+            modelBuilder.Entity<Membership>().HasKey(x => x.MembershipId);
+
             modelBuilder.Entity<Organization>()
                 .HasMany(p => p.Members)
                 .WithOne(p => p.Organization);
